@@ -1,0 +1,15 @@
+mixin link(href, name)
+    a(href=href)&attributes(attributes)= name
+
+header.header 
+    h1.logo 
+        a(href='/') 
+            |Click
+            span Well 
+    ul.links
+        li 
+            +link('/', 'Home')   
+        li 
+            +link('/employees/add', 'New employee')
+        li 
+            +link('/employees', 'My employees')
