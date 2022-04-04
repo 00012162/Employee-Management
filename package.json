@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "check-is-empty-js": "^1.0.3",
     "express": "^4.17.3",
     "pug": "^3.0.2"
   },
   "name": "00012162",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
@@ -14,5 +14,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/00012162/Employee-Management.git"
+  },
+  "bugs": {
+    "url": "https://github.com/00012162/Employee-Management/issues"
+  },
+  "homepage": "https://github.com/00012162/Employee-Management#readme",
   "description": ""
 }

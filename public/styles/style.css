@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* Header starts */
+
 .header {
     width: 70%;
     margin: 1rem auto;
@@ -62,6 +64,10 @@
 .links li a:hover {
     color: darkblue;
 }
+/* Header ends */
+
+
+/* Footer starts */
 
 .footer {
     display: flex;
@@ -107,8 +113,10 @@
     margin: 2rem 0;
     font-size: 1.3rem;
 }
+/* Footer ends */
 
 
+/* Index pug starts */
 .index {
     width: 75%;
     margin: 0 auto;
@@ -141,6 +149,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    border: none;
 }
 
 .btn:hover {
@@ -152,3 +161,115 @@
     height: 18rem;
     border-radius: 10px;
 }
+/* Index pug ends */
+
+
+/* Create pug starts */
+
+.create-employee {
+    max-width: 1100px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.create-employee .success, .create-employee .error {
+    margin: 20px;
+    color: #585858ab;
+    font-weight: 550;
+}
+
+.create-employee .success span, .create-employee .error span {
+    color: #268b12;
+    font-weight: 550;
+    font-size: 1.5em;
+}
+
+.form-title {
+    font-size: 2.5rem;
+    color: darkblue;
+    text-align: center;
+}
+
+.create-employee form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.create-employee form .label {
+    margin: 15px 0 5px 0;
+}
+
+.create-employee form input {
+    height: 2.5rem;
+    background: #fff;
+    transition: 0.5s;
+    width: 50%;
+    padding: 0 20px;
+    font-size: 16px;
+    border-bottom: #555 2px solid;
+    border-radius: 5px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.create-employee form input:focus {
+    background: rgba(167, 167, 167, 0.274);
+    outline: none;
+}
+
+.btns {
+    margin: 0.5rem 0;
+    display: flex;
+    gap: 2rem;
+}
+/* Create pug ends */
+
+
+/* Employees pug starts */
+
+.employees {
+    width: 70%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+table {
+    margin-top: 2rem;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid gainsboro;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:hover:not(:first-child) {
+    background-color: gainsboro;
+}
+
+.fa-solid {
+    font-size: 1.6rem;
+}
+
+.fa-pen-to-square {
+    color: darkblue;
+}
+
+.fa-pen-to-square:hover {
+    color: blue;
+}
+
+.fa-trash {
+    color: gray;
+}
+
+.fa-trash:hover {
+    color: black;
+}
+
+/* Employees pug ends */

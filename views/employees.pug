@@ -1,0 +1,34 @@
+extends layout.pug 
+
+block content 
+    .employees
+        h2.form-title All The Employees
+        if employees.length
+            table
+                tr
+                    th Number 
+                    th Name 
+                    th Position 
+                    th Hours 
+                    th Rate
+                    th Salary
+                    th Update
+                    th Delete
+                each employee in employees
+                    tr
+                        - var max= employees.length;
+                        - for(var i = 0; i < max; i++) 
+                        td #{i}
+                        td #{ employee.name}
+                        td #{ employee.position}
+                        td #{ employee.hours}
+                        td #{ employee.rate}
+                        td #{ employee.rate * employee.hours}  
+                        td
+                            a(href=`employees/${ employee.id}/update`)
+                                i.fa-solid.fa-pen-to-square
+                        td
+                            a(href=`employees/${employee.id }/delete`)
+                                i.fa-solid.fa-trash
+        else
+            p.h1 Please add some employee to database 

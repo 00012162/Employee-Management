@@ -1,0 +1,60 @@
+extends layout.pug 
+
+block content 
+    .create-employee
+        section.create-form
+            if (employee == null) 
+                h2.form-title Create a New Employee
+                if success
+                    p.success 
+                    | Employee added successfully 
+                    span ✓✓✓
+            else 
+                h2.form-title Update
+                if success
+                    p.success 
+                    | Employee edited successfully 
+                    span ✓✓✓
+
+        if error
+            .error
+                p Seems you missed to fill some inputs 
+                p 
+                    | Please try again 
+
+        if (employee == null) 
+            form(method="post")
+                label.label Name
+                input( type="text" name="name")
+                
+                label.label Position
+                input(type="text" name="position")
+
+                label.label Hours
+                input( type="number" name="hours" min=0)
+                
+                label.label Rate
+                input( type="number" name="rate" min=0)
+      
+                .btns
+                    button.btn Submit
+                    a(href="/").btn Cancel  
+        else  
+            form(method="post")
+
+                label.label Name
+                input( type="text" name="title" value=`${employee.name}`)
+                
+                label.label Position
+                input(type="text" name="position" value=`${employee.position}`)
+
+                label.label Hours
+                input( type="number" name="hours" min=0 value=`${employee.hours}`)
+                
+                label.label Rate
+                input( type="number" name="rate" min=0 value=`${employee.rate}`)
+
+                .btns
+                    button.btn Submit
+                    a(href="/employees").btn Cancel
+        
