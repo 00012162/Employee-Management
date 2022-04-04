@@ -25,10 +25,10 @@ block content
                         td #{ employee.rate}
                         td #{ employee.rate * employee.hours}  
                         td
-                            a(href=`employees/${ employee.id}/update`)
+                            a(href=`employees/${employee.id}/update`)
                                 i.fa-solid.fa-pen-to-square
                         td
-                            a(href=`employees/${employee.id }/delete`)
+                            a(href=`employees/${employee.id}/delete`)
                                 i.fa-solid.fa-trash
         else
             p.form-title Please add some employee to database 

@@ -61,20 +61,67 @@ app.post('/create', (req, res) => {
     }
 })
 
-app.get('/:id/edit', (req, res) => {
-    blogDatabase.getBlog(
-        req.params.id,
-        blog => res.render('create', {item: blog})
-    )
-})
+app.get('/:id/update', (req, res) => {
+    fs.readFile("./data/db.json", (err, data) => {
+      if(err) throw error
+  
+      const employees = JSON.parse(data)
+      const employee = employees.filter(employee => employee.id == req.params.id)[0]
+      res.render('create', {employee: employee})
+    })
+  })
 
-app.post('/:id/edit', (req, res) => {
-    if(Validator(req.body)) {
-        blogDatabase.update(req.body, req.params.id, () => res.render('create', {success: true, item: !null}))
-    } else res.render('create' , {success: false, error: true})
-})
+app.post("/:id/update", (req, res) => {
 
-app.delete('/:id/delete', (req, res) => {
+    const form = req.body;
+    console.log()
+  
+    if (isNullOrEmpty(form.name) ||
+    isNullOrEmpty(form.position) ||
+    isNullOrEmpty(form.hours) ||
+    isNullOrEmpty(form.rate)
+    ) {
+    fs.readFile("./data/db.json", (err, data) => {
+        if (err) throw(err);
+
+        res.render("create", {
+            error: true,
+            employee: null
+        });
+      })
+    } else {
+      const id = req.params.id;
+      fs.readFile("./data/db.json", (err, data) => {
+        if (err) throw err;
+  
+        const employees = JSON.parse(data);
+        const updated = employees.filter(employee => employee.id != id) || []
+  
+        let employee = employees.filter(employee => employee.id == id)[0]
+  
+        updated.push(employee = {
+          id: id,
+          name: form.name,
+          position: form.position,
+          hours: form.hours,
+          rate: form.rate
+        });
+  
+        fs.writeFile("./data/db.json", JSON.stringify(updated), (err) => {
+          if (err) throw err;
+  
+          fs.readFile("./data/db.json", (err, data) => {
+           if (err) throw err;
+  
+          res.render("employees");
+          });
+          res.redirect('/employees');
+        });
+      });
+    }
+});
+
+app.get('/:id/delete', (req, res) => {
     const id = req.params.id;
 
   fs.readFile("./data/db.json", (err, data) => {
