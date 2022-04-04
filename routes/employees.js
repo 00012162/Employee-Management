@@ -74,9 +74,21 @@ app.post('/:id/edit', (req, res) => {
     } else res.render('create' , {success: false, error: true})
 })
 
-app.get('/:id/delete', (req, res) => {
-    blogDatabase.delete(
-        req.params.id, () => res.redirect('/blogs'))
+app.delete('/:id/delete', (req, res) => {
+    const id = req.params.id;
+
+  fs.readFile("./data/db.json", (err, data) => {
+    if (err) throw err;
+
+    const employees = JSON.parse(data);
+    const filteredEmployee = employees.filter((employee) => employee.id != id);
+
+    fs.writeFile("./data/db.json", JSON.stringify(filteredEmployee), (err) => {
+      if (err) throw err;
+      res.render('employees', { employees: filteredEmployee, deleted: true });
+    });
+    res.redirect('/employees');
+  });
 })
 
 function id() {

@@ -174,7 +174,8 @@
 
 .create-employee .success, .create-employee .error {
     margin: 20px;
-    color: #585858ab;
+    font-size: 1.3rem;
+    color: red;
     font-weight: 550;
 }
 

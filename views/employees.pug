@@ -2,8 +2,8 @@ extends layout.pug
 
 block content 
     .employees
-        h2.form-title All The Employees
         if employees.length
+            h2.form-title All The Employees
             table
                 tr
                     th Number 
@@ -31,4 +31,4 @@ block content
                             a(href=`employees/${employee.id }/delete`)
                                 i.fa-solid.fa-trash
         else
-            p.h1 Please add some employee to database 
+            p.form-title Please add some employee to database 
