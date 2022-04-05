@@ -172,11 +172,11 @@
     position: relative;
 }
 
-.create-employee .success, .create-employee .error {
+.error {
     margin: 20px;
     font-size: 1.3rem;
     color: red;
-    font-weight: 550;
+    font-weight: 4000;
 }
 
 .create-employee .success span, .create-employee .error span {
@@ -201,7 +201,8 @@
     margin: 15px 0 5px 0;
 }
 
-.create-employee form input {
+.create-employee form input,
+.login-container form div input{
     height: 2.5rem;
     background: #fff;
     transition: 0.5s;
@@ -274,3 +275,60 @@ tr:hover:not(:first-child) {
 }
 
 /* Employees pug ends */
+
+
+/* Log in pug starts */
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #222D32;
+}
+
+.login-container form {
+    margin: 2rem 0;
+}
+
+.login-container form div {
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-container form div input {
+    width: 15rem;
+    margin-left: 3rem;
+    padding: 1rem;
+}
+
+.key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    color: darkgrey;
+}
+
+.login-container h1 {
+    color: white;
+    font-size: 3rem;
+    margin: 2rem 0;
+    font-weight: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.btn_login {
+    float: right;
+    margin-right: 3rem;
+}
+
+/* Log in pug ends */

@@ -6,7 +6,6 @@ block content
             h2.form-title All The Employees
             table
                 tr
-                    th Number 
                     th Name 
                     th Position 
                     th Hours 
@@ -16,9 +15,6 @@ block content
                     th Delete
                 each employee in employees
                     tr
-                        - var max= employees.length;
-                        - for(var i = 0; i < max; i++) 
-                        td #{i}
                         td #{ employee.name}
                         td #{ employee.position}
                         td #{ employee.hours}

@@ -2,9 +2,10 @@ const express = require("express");
 const bodyParser = require('body-parser')
 const app = express();
 
+const isNullOrEmpty = require('check-is-empty-js');
 const fs = require("fs");
 
-const Employees = require('./routes/employees')
+const Employees = require('./routes/employees');
 
 const PORT = 4000;
 
@@ -14,15 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/employees', Employees)
 
-
 app.get("/", (req, res) => {
-    res.render("index");
+  res.render("index");
 });
+
 
 app.listen(PORT, (err) => {
   if (err) throw err;
-
   console.log(`This app is running on port ${PORT}`);
 });
-
-

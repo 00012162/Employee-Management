@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/00012162/Employee-Management/issues"
-  }
+  },
+  "homepage": "https://github.com/00012162/Employee-Management#readme",
+  "devDependencies": {},
+  "description": ""
 }
