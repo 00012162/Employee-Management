@@ -2,6 +2,9 @@
 
 The Employees Management Application is built to add, update and remove workers by the user. Made by ID 00012162
 
+There is only one problem.  If this project is working locally with live server, login page apprears and its password is as below mentioned.
+Unforunately, login page is not working with glitch.
+
 ## Admin Panel 
 
 login: admin
