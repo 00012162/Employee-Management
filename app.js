@@ -14,8 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/employees', Employees)
 
+
 app.get("/", (req, res) => {
-  res.render("index");
+    res.render("index");
 });
 
 app.listen(PORT, (err) => {
